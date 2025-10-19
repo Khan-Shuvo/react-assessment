@@ -34,11 +34,11 @@ export default function Header() {
 
                     {/* desktop nav  */}
                     <div className='hidden md:flex items-center gap-3'>
-                        {menu.map(item => <HeaderItems name={item.name} Icon={item.icon} />)};
+                        {menu.map(item => <HeaderItems name={item.name} Icon={item.icon} path = {item.path} />)};
                     </div>
                     {/* mobile nav */}
                     <div className='flex items-center gap-3 md:hidden'>
-                        {menu.map((item, index) => index < 3 && (<HeaderItems name={''} Icon={item.icon} />))}
+                        {menu.map((item, index) => index < 3 && (<HeaderItems name={''} Icon={item.icon} path = {item.path} />))}
                     </div>
                     {/* three dote */}
                     <div className='md:hidden' onClick={() => (setToggle(!toggle))}>
@@ -46,7 +46,7 @@ export default function Header() {
                         {toggle ?
                             <div className='absolute mt-3 bg-[#121212] border-[1px] border-gray-600 py-3 px-1'>
                                 {menu.map((item, index) => index > 2 && (
-                                    <HeaderItems name={item.name} Icon={item.icon} />
+                                    <HeaderItems name={item.name} Icon={item.icon} path = {item.path} />
                                 ))}
                             </div> : null
                         }
