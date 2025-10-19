@@ -1,21 +1,47 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Header from './components/Header'
-import Slider from './components/Slider'
-import ProductionHouse from './components/ProductionHouse'
-import GenreMovieList from './components/GenreMovieList'
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
+import Home from './components/Home'
 
 function App() {
   const [count, setCount] = useState(0)
 
+
+  function Search() {
+    return <h1 className="text-white text-3xl p-5">Search Page</h1>
+  }
+
+  function WatchList() {
+    return <h1 className="text-white text-3xl p-5">Watch List Page</h1>
+  }
+
+  function Originals() {
+    return <h1 className="text-white text-3xl p-5">Originals Page</h1>
+  }
+
+  function Movies() {
+    return <h1 className="text-white text-3xl p-5">Movies Page</h1>
+  }
+
+  function Series() {
+    return <h1 className="text-white text-3xl p-5">Series Page</h1>
+  }
+
+
   return (
     <>
-      <Header />
-      <Slider/>
-      <ProductionHouse/>
-      <GenreMovieList/>
+      <Router>
+        <Header/>
+        <Routes>
+          <Route path = '/' element = {<Home/>} />
+          <Route path = '/search' element = {<Search/>} />
+          <Route path = '/watchlist' element = {<WatchList/>} />
+          <Route path = '/originals' element = {<Originals/>} />
+          <Route path = '/movies' element = {<Movies/>} />
+          <Route path = '/series' element = {<Series/>} />
+        </Routes>
+      </Router>
     </>
   )
 }
