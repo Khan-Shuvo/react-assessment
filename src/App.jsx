@@ -3,6 +3,7 @@ import './App.css'
 import Header from './components/Header'
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 import Home from './components/Home'
+import Movies from './components/Movies'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -18,10 +19,6 @@ function App() {
 
   function Originals() {
     return <h1 className="text-white text-3xl p-5">Originals Page</h1>
-  }
-
-  function Movies() {
-    return <h1 className="text-white text-3xl p-5">Movies Page</h1>
   }
 
   function Series() {
