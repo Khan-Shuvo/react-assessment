@@ -4,6 +4,7 @@ import Header from './components/Header'
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 import Home from './components/Home'
 import Movies from './components/Movies'
+import MovieDetails from './components/MovieDetails'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -37,6 +38,7 @@ function App() {
           <Route path = '/originals' element = {<Originals/>} />
           <Route path = '/movies' element = {<Movies/>} />
           <Route path = '/series' element = {<Series/>} />
+          <Route path = '/movie/:id' element = {<MovieDetails/>} />
         </Routes>
       </Router>
     </>
