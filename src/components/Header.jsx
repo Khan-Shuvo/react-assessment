@@ -17,31 +17,13 @@ export default function Header() {
     const [toggle, setToggle] = useState(false)
 
     const menu = [
-        {
-            name: 'HOME',
-            icon: HiHome
-        },
-        {
-            name: 'SEARCH',
-            icon: HiMagnifyingGlass
-        },
-        {
-            name: 'WATCH LIST',
-            icon: HiPlus
-        },
-        {
-            name: 'ORIGINALS',
-            icon: HiStar
-        },
-        {
-            name: 'MOVIES',
-            icon: HiPlayCircle
-        },
-        {
-            name: 'SERIES',
-            icon: HiTv
-        }
-    ];
+        { name: "home", icon: HiHome, path: "/" },
+        { name: "search", icon: HiMagnifyingGlass, path: "/search" },
+        { name: "watch list", icon: HiPlus, path: "/watchlist" },
+        { name: "originals", icon: HiStar, path: "/originals" },
+        { name: "movies", icon: HiPlayCircle, path: "/movies" },
+        { name: "series", icon: HiTv, path: "/series" }
+    ]
 
     return (
         <>
