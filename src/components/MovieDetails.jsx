@@ -6,13 +6,13 @@ const BASE_URL = import.meta.env.VITE_TMDB_BASE_URL;
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 
 export default function MovieDetails() {
-    const { id } = useParams();
+    const { id, type } = useParams();
     const [movie, setMovie] = useState(null);
 
     useEffect(() => {
         async function fetchMovie() {
             try {
-                const res = await fetch(`${BASE_URL}/movie/${id}?api_key=${API_KEY}`);
+                const res = await fetch(`${BASE_URL}/${type}/${id}?api_key=${API_KEY}`);
                 const data = await res.json();
                 setMovie(data);
             } catch (error) {
@@ -53,11 +53,11 @@ export default function MovieDetails() {
                     {/* Details */}
                     <div className="max-w-2xl space-y-4 text-center md:text-left">
                         <h1 className="text-4xl md:text-5xl font-extrabold text-yellow-400">
-                            {movie.title}
+                            {movie.title || movie.name}
                         </h1>
 
                         <div className="flex flex-wrap justify-center md:justify-start gap-4 text-gray-300 text-sm">
-                            <span>🗓 {movie.release_date}</span>
+                            <span>🗓 {movie.release_date || movie.first_air_date}</span>
                             <span>⏱ {movie.runtime} min</span>
                             <span>⭐ {movie.vote_average.toFixed(1)} / 10</span>
                         </div>
