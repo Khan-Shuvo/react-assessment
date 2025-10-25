@@ -5,6 +5,7 @@ import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 import Home from './components/Home'
 import Movies from './components/Movies'
 import MovieDetails from './components/MovieDetails'
+import Series from './components/Series'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -22,9 +23,6 @@ function App() {
     return <h1 className="text-white text-3xl p-5">Originals Page</h1>
   }
 
-  function Series() {
-    return <h1 className="text-white text-3xl p-5">Series Page</h1>
-  }
 
 
   return (
@@ -38,7 +36,7 @@ function App() {
           <Route path = '/originals' element = {<Originals/>} />
           <Route path = '/movies' element = {<Movies/>} />
           <Route path = '/series' element = {<Series/>} />
-          <Route path = '/movie/:id' element = {<MovieDetails/>} />
+          <Route path = '/:type/:id' element = {<MovieDetails/>} />
         </Routes>
       </Router>
     </>
