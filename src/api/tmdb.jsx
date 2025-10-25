@@ -18,3 +18,11 @@ export const getMovieByGenreId = async (id)=>{
     }
    return await res.json()
 }
+
+export const getTvSeries = async (id) =>{
+    const res = await fetch(`${BASE_URL}/discover/tv?api_key=${API_KEY}&with_genres=${id}`)
+    if(!res.ok){
+        throw new Error("Failed to fetch tv series")
+    }
+    return await res.json()
+}
