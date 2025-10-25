@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { getMovieByGenreId } from '../api/tmdb'
-import MovieCard from './MovieCard';
+import Card from './Card';
 
-export default function MovieList({genreId}) {
+export default function List({genreId}) {
     const [movies, setMovies] = useState([])
 
     useEffect(() => {
@@ -23,7 +23,7 @@ export default function MovieList({genreId}) {
   return (
     <div className='grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4 cursor-pointer rounded-md '>
         {movies.map((item, index) => index <10 &&( 
-            <MovieCard movies = {item}/>)
+            <Card movies = {item}/>)
         )}
     </div>
   )

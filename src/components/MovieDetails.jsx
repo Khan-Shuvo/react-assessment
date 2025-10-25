@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import MovieList from "./MovieList";
+import List from "./List";
 
 const BASE_URL = import.meta.env.VITE_TMDB_BASE_URL;
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
@@ -94,7 +94,7 @@ export default function MovieDetails() {
                         <h2 className="text-3xl font-bold mb-6 text-yellow-400">
                             More like {movie.title}
                         </h2>
-                        <MovieList genreId={movie.genres[0].id} />
+                        <List genreId={movie.genres[0].id} />
                     </div>
                 )}
             </div>
