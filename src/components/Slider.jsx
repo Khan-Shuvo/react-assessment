@@ -14,8 +14,6 @@ export default function Slider() {
         async function fetchMovies() {
             try {
                 const data = await getTrendingVideos();
-                // console.log(movies);
-                console.log(data.results)
                 setMovies(data.results)
 
             } catch (error) {
