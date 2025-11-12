@@ -18,9 +18,6 @@ export default function Header() {
 
     const menu = [
         { name: "home", icon: HiHome, path: "/" },
-        { name: "search", icon: HiMagnifyingGlass, path: "/search" },
-        { name: "watch list", icon: HiPlus, path: "/watchlist" },
-        { name: "originals", icon: HiStar, path: "/originals" },
         { name: "movies", icon: HiPlayCircle, path: "/movies" },
         { name: "series", icon: HiTv, path: "/series" }
     ]
