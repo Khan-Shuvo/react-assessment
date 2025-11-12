@@ -49,7 +49,6 @@ export default function Series() {
         fetchAllSeries();
     }, []);
 
-    console.log(series)
 
 
     return (
