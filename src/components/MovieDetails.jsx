@@ -24,8 +24,9 @@ export default function MovieDetails() {
 
     if (!movie) {
         return (
-            <div className="text-white flex justify-center items-center min-h-screen text-2xl">
-                Loading...
+            <div className="flex justify-center items-center h-64">
+                <div className="animate-spin rounded-full h-12 w-12 border-t-4 border-b-4 border-white"></div>
+                <p className="ml-4 text-white text-lg">Loading...</p>
             </div>
         );
     }
