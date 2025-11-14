@@ -6,37 +6,19 @@ import Home from './components/Home'
 import Movies from './components/Movies'
 import MovieDetails from './components/MovieDetails'
 import Series from './components/Series'
+import SearchPage from './components/SearchPage'
 
 function App() {
-  const [count, setCount] = useState(0)
-
-
-  function Search() {
-    return <h1 className="text-white text-3xl p-5">Search Page</h1>
-  }
-
-  function WatchList() {
-    return <h1 className="text-white text-3xl p-5">Watch List Page</h1>
-  }
-
-  function Originals() {
-    return <h1 className="text-white text-3xl p-5">Originals Page</h1>
-  }
-
-
-
   return (
     <>
       <Router>
         <Header/>
         <Routes>
           <Route path = '/' element = {<Home/>} />
-          <Route path = '/search' element = {<Search/>} />
-          <Route path = '/watchlist' element = {<WatchList/>} />
-          <Route path = '/originals' element = {<Originals/>} />
           <Route path = '/movies' element = {<Movies/>} />
           <Route path = '/series' element = {<Series/>} />
           <Route path = '/:type/:id' element = {<MovieDetails/>} />
+          <Route path = '/search' element = {<SearchPage/>} />
         </Routes>
       </Router>
     </>
